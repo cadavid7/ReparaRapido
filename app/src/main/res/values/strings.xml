@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ReparaRapido</string>
+    <string name="prompt_email">prompt_email</string>
+    <string name="action_sign_in_short">action_sign_in_short</string>
+</resources>

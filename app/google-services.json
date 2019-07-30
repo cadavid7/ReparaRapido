@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "32245343016",
+    "firebase_url": "https://reparafire.firebaseio.com",
+    "project_id": "reparafire",
+    "storage_bucket": "reparafire.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32245343016:android:c31261fe66f6b3d2",
+        "android_client_info": {
+          "package_name": "com.example.repararapido"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32245343016-2ot352gobot3qbi54paanrpmofh99g1o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.repararapido",
+            "certificate_hash": "6a9af59116f9848455778bb89f02b308dccffc01"
+          }
+        },
+        {
+          "client_id": "32245343016-kf3pkga6v4dtprdfihsdvv2ucmddu689.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFt7B57Y2NTw3f37cme1t7yvpllowhexA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32245343016-kf3pkga6v4dtprdfihsdvv2ucmddu689.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
