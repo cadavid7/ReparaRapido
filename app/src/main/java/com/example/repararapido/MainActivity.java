@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //declare buttons and edit texts in oncreate
+        //declare buttons and edit texts in oncreate xxxx
 
         btn_sign_out = (Button)findViewById(R.id.btn_sign_out);
         btn_sign_out.setOnClickListener(new View.OnClickListener() {
