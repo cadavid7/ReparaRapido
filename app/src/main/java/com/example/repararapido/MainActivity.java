@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            //yyyy
                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
         });
