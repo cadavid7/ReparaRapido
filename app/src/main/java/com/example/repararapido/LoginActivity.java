@@ -69,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                 else{
 
                     loginUser(email,password);
+
                 }
 
             }
@@ -178,7 +179,7 @@ public class LoginActivity extends AppCompatActivity {
                             pd.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+                            startActivity(new Intent(LoginActivity.this, Home.class));
                             finish();
                         } else {
                             pd.dismiss();
