@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+        android:id="@+id/nav_personal"
+        android:icon="@drawable/ic_accessibility_black_24dp"
+        android:iconTint="@android:color/white"
+        android:title="Personal" />
+
+        <item
+            android:id="@+id/nav_contacto"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Contacto" />
+
+        <item
+            android:id="@+id/nav_solicitud"
+            android:icon="@drawable/ic_build_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Solicitudes" />
+
+        <item
+            android:id="@+id/nav_log_out"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:iconTint="@android:color/white"
+            android:title="Salir" />
+
+    </group>
+
+
+
+</menu>
