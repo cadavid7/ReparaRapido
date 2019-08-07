@@ -10,29 +10,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.repararapido.Interface.ItemClickListener;
 import com.example.repararapido.R;
 
-public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView txtMenuName;
-    public ImageView imageView;
+public class PersonalViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public TextView personal_name;
+    public ImageView personal_image;
 
     private ItemClickListener itemClickListener;
-
-    public MenuViewHolder(@NonNull View itemView) {
-        super(itemView);
-
-       txtMenuName = (TextView) itemView.findViewById(R.id.menu_name);
-       imageView = (ImageView) itemView.findViewById(R.id.menu_image);
-       itemView.setOnClickListener(this);
-    }
 
     public void setItemClickListener(ItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
     }
 
+    public PersonalViewHolder(@NonNull View itemView) {
+        super(itemView);
+        personal_name = (TextView) itemView.findViewById(R.id.personal_name);
+        personal_image = (ImageView) itemView.findViewById(R.id.personal_image);
+        itemView.setOnClickListener(this);
+    }
+
     @Override
     public void onClick(View view) {
         itemClickListener.onClick(view,getAdapterPosition(),false);
-
     }
-
 }

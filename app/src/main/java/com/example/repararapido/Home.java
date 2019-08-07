@@ -1,7 +1,12 @@
 package com.example.repararapido;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.repararapido.Interface.ItemClickListener;
+import com.example.repararapido.Model.Category;
+import com.example.repararapido.ViewHolder.MenuViewHolder;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -15,15 +20,18 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,13 +42,15 @@ public class Home extends AppCompatActivity
 
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
+
+    FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Personal");
+        toolbar.setTitle("Home");
         setSupportActionBar(toolbar);
 
         database = FirebaseDatabase.getInstance();
@@ -64,12 +74,39 @@ public class Home extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        //View headerView = navigationView.getHeaderView(0);
-       // txtFullName = (TextView) findViewById(R.id.txtFullName);
+        View headerView = navigationView.getHeaderView(0);
+        txtFullName = (TextView) findViewById(R.id.txtFullName);
        // txtFullName.setText();
 
         //Cargar Personal
+        txtFullName = findViewById(R.id.txtFullName) ;
+        recycler_menu = findViewById(R.id.recycler_menu);
+        recycler_menu.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recycler_menu.setLayoutManager(layoutManager);
+        loadMenu();
 
+    }
+
+    private void loadMenu() {
+        adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
+            @Override
+            protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
+                viewHolder.txtMenuName.setText(model.getImage());
+                Picasso.get().load(model.getImage()).into(viewHolder.imageView);
+                final Category clickItem = model;
+                viewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        Intent listaPersonal = new Intent(Home.this,ListaPersonal.class);
+                        listaPersonal.putExtra("CategoryId",adapter.getRef(position).getKey());
+                        startActivity(listaPersonal);
+                    }
+                });
+            }
+        };
+
+         recycler_menu.setAdapter(adapter);
     }
 
     @Override

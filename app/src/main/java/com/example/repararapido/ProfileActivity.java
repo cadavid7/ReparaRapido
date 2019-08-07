@@ -40,10 +40,12 @@ public class ProfileActivity extends AppCompatActivity {
 
             mProfileTv.setText(user.getEmail());
 
+            startActivity(new Intent(ProfileActivity.this, Home.class));
+
         }
         else{
 
-            startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+            startActivity(new Intent(ProfileActivity.this, Home.class));
             finish();
         }
     }
