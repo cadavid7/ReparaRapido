@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Profile");
+        //actionBar.setTitle("Profile");
 
         firebaseAuth = FirebaseAuth.getInstance();
 

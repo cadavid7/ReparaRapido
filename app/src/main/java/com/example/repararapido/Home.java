@@ -92,7 +92,7 @@ public class Home extends AppCompatActivity
         adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
-                viewHolder.txtMenuName.setText(model.getImage());
+                viewHolder.txtMenuName.setText(model.getName());
                 Picasso.get().load(model.getImage()).into(viewHolder.imageView);
                 final Category clickItem = model;
                 viewHolder.setItemClickListener(new ItemClickListener() {
