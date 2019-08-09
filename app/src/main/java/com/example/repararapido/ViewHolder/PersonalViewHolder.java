@@ -10,10 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.repararapido.Interface.ItemClickListener;
 import com.example.repararapido.R;
 
+import org.w3c.dom.Text;
+
 
 public class PersonalViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView personal_name;
+    public TextView personal_profesion;
     public ImageView personal_image;
 
     private ItemClickListener itemClickListener;
@@ -25,6 +28,7 @@ public class PersonalViewHolder extends RecyclerView.ViewHolder implements View.
     public PersonalViewHolder(@NonNull View itemView) {
         super(itemView);
         personal_name = (TextView) itemView.findViewById(R.id.personal_name);
+        personal_profesion = itemView.findViewById(R.id.personal_Profesion);
         personal_image = (ImageView) itemView.findViewById(R.id.personal_image);
         itemView.setOnClickListener(this);
     }

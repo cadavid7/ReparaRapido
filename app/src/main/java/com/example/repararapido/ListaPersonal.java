@@ -61,6 +61,7 @@ public class ListaPersonal extends AppCompatActivity {
             @Override
             protected void populateViewHolder(PersonalViewHolder viewHolder, Personal model, int position) {
                 viewHolder.personal_name.setText(model.getName());
+                viewHolder.personal_profesion.setText(model.getProfesion());
                 Picasso.get().load(model.getImage())
                 .into(viewHolder.personal_image);
 
@@ -69,6 +70,8 @@ public class ListaPersonal extends AppCompatActivity {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
                         Intent personalDetail = new Intent(ListaPersonal.this,PersonalDetail.class);
+                        personalDetail.putExtra("MenuId",adapter.getRef(position).getKey());
+                        startActivity(personalDetail);
                     }
                 });
             }
