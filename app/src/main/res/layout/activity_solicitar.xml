@@ -7,9 +7,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/finalherramientas"
     android:padding="16dp"
-    tools:context=".Solicitar">
-
-    <androidx.recyclerview.widget.RecyclerView
+    tools:context=".Solicit
+    <androidx.recyclerview.ar">
+    widget.RecyclerView
         android:id="@+id/ListaSolicitudes"
         android:background="@android:color/transparent"
         android:layout_width="match_parent"
