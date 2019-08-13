@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.repararapido.Database.Database;
 import com.example.repararapido.Model.Personal;
+import com.example.repararapido.Model.Solicitud;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +31,8 @@ public class PersonalDetail extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference personal;
 
+    Personal currentPersonal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +43,23 @@ public class PersonalDetail extends AppCompatActivity {
         personal = database.getReference("Personal");
 
         btnSolicitar = findViewById(R.id.btnSolicitar);
+
+        btnSolicitar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Database(getBaseContext()).addToSolicitudes(new Solicitud(
+                menuId,
+                currentPersonal.getName(),
+                currentPersonal.getProfesion()
+
+
+
+                ));
+
+                Toast.makeText(PersonalDetail.this, "Agregado",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         personal_descripcion = findViewById(R.id.personal_descripcion);
         personal_nombre = findViewById(R.id.personal_name);
         personal_horario = findViewById(R.id.personal_horario);
@@ -59,11 +82,11 @@ public class PersonalDetail extends AppCompatActivity {
         personal.child(menuId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Personal personal = dataSnapshot.getValue(Personal.class);
-                Picasso.get().load(personal.getImage()).into(personal_image);
-                personal_descripcion.setText(personal.getDescripcion());
-                personal_horario.setText(personal.getHorario());
-                personal_nombre.setText(personal.getName());
+                currentPersonal = dataSnapshot.getValue(Personal.class);
+                Picasso.get().load(currentPersonal.getImage()).into(personal_image);
+                personal_descripcion.setText(currentPersonal.getDescripcion());
+                personal_horario.setText(currentPersonal.getHorario());
+                personal_nombre.setText(currentPersonal.getName());
 
 
 

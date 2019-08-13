@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mRegister,mLogin;
+    Button btnSignIn,btnSignUp;
+    TextView txtSlogan;
 
 
     @Override
@@ -17,22 +19,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mRegister = findViewById(R.id.register_btn);
-        mLogin = findViewById(R.id.login_btn);
+        btnSignIn = findViewById(R.id.btnSignUp);
+        btnSignUp = findViewById(R.id.btnSingIn);
 
-        mRegister.setOnClickListener(new View.OnClickListener() {
+
+
+
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                Intent signIn = new Intent(MainActivity.this,SignIn.class);
+                startActivity(signIn);
             }
         });
 
-        mLogin.setOnClickListener(new View.OnClickListener() {
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent( MainActivity.this, LoginActivity.class));
+
             }
         });
     }

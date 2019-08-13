@@ -1,18 +1,18 @@
 package com.example.repararapido.Model;
 
-public class User {
+public  class User{
     private String Name;
     private String Password;
-    private String Phone;
+
 
     public User(){
 
     }
 
-    public User(String name, String password, String phone) {
+    public User(String name, String password) {
         Name = name;
         Password = password;
-        Phone = phone;
+
     }
 
     public String getName() {
@@ -31,11 +31,5 @@ public class User {
         Password = password;
     }
 
-    public String getPhone() {
-        return Phone;
-    }
 
-    public void setPhone(String phone) {
-        Phone = phone;
-    }
 }
