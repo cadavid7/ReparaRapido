@@ -1,14 +1,17 @@
 package com.example.repararapido.Model;
 
+import android.widget.ProgressBar;
+
 public class Personal {
 
-    private String Name, Image, Descripcion, Experiencia, Horario, MenuId;
+    private String Name, Image, Descripcion, Experiencia, Horario, MenuId, Profesion;
 
     public Personal() {
     }
 
-    public Personal(String name, String image, String descripcion, String experiencia, String horario, String menuId) {
+    public Personal(String name, String image, String descripcion, String experiencia, String horario, String menuId, String profesion) {
         Name = name;
+        Profesion = profesion;
         Image = image;
         Descripcion = descripcion;
         Experiencia = experiencia;
@@ -62,5 +65,13 @@ public class Personal {
 
     public void setMenuId(String menuId) {
         MenuId = menuId;
+    }
+
+    public String getProfesion() {
+        return Profesion;
+    }
+
+    public void setProfesion(String profesion) {
+        Profesion = profesion;
     }
 }
