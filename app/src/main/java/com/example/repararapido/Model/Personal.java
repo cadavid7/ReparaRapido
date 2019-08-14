@@ -4,19 +4,20 @@ import android.widget.ProgressBar;
 
 public class Personal {
 
-    private String Name, Image, Descripcion, Experiencia, Horario, MenuId, Profesion;
+    private String Name, Image, Descripcion, Experiencia, Horario, MenuId, Profesion, Email;
 
     public Personal() {
     }
 
-    public Personal(String name, String image, String descripcion, String experiencia, String horario, String menuId, String profesion) {
+    public Personal(String name, String image, String descripcion, String experiencia, String horario, String menuId, String profesion, String email) {
         Name = name;
-        Profesion = profesion;
         Image = image;
         Descripcion = descripcion;
         Experiencia = experiencia;
         Horario = horario;
         MenuId = menuId;
+        Profesion = profesion;
+        Email = email;
     }
 
     public String getName() {
@@ -73,5 +74,13 @@ public class Personal {
 
     public void setProfesion(String profesion) {
         Profesion = profesion;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 }

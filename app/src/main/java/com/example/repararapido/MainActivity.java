@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSignIn = findViewById(R.id.btnSignUp);
-        btnSignUp = findViewById(R.id.btnSingIn);
+        btnSignIn = findViewById(R.id.btnSignIn2);
+        btnSignUp = findViewById(R.id.btnSignUp2);
 
 
 
@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-
+                Intent signUp = new Intent(MainActivity.this,SignUp.class);
+                startActivity(signUp);
             }
         });
     }

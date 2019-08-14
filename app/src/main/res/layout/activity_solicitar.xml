@@ -50,7 +50,7 @@
 
                 </LinearLayout>
 
-                <info.hoang8f.widget.FButton
+                <Button
                     android:id="@+id/btnContratar"
                     android:text="Contratar"
                     android:layout_centerHorizontal="true"
@@ -63,11 +63,7 @@
                     android:textSize="20sp"
                     android:layout_alignParentBottom="true"
                     android:textColor="@color/colorWhite"
-                    app:buttonColor="@color/colorPrimary"
-                    app:shadowColor="@color/colorBlack"
-                    app:shadowEnabled="true"
-                    app:shadowHeight="5dp"
-                    app:cornerRadius="4dp"
+
                     />
 
             </RelativeLayout>

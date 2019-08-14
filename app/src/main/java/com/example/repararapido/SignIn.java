@@ -2,11 +2,13 @@ package com.example.repararapido;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
+
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -22,7 +24,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class SignIn extends AppCompatActivity {
 
-    EditText edtPhone, edtPassword;
+    EditText edtPhone, edtPassword,edtEmail;
     Button btnSignIn;
 
     @Override
@@ -32,6 +34,8 @@ public class SignIn extends AppCompatActivity {
 
         edtPassword = (MaterialEditText) findViewById(R.id.edtPassword);
         edtPhone = (MaterialEditText) findViewById(R.id.edtPhone);
+        //edtEmail = (MaterialEditText) findViewById(R.id.edtEmail);
+
         btnSignIn = findViewById(R.id.btnSingIn);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -57,7 +61,8 @@ public class SignIn extends AppCompatActivity {
 
 
                             if (user.getPassword().equals(edtPassword.getText().toString())) {
-                                Toast.makeText(SignIn.this, "Registro Exitoso!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignIn.this, "Bienvenido!", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(SignIn.this, Home.class));
 
                             } else {
                                 Toast.makeText(SignIn.this, "Fallo Registro", Toast.LENGTH_SHORT).show();

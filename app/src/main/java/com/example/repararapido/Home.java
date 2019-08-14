@@ -126,8 +126,8 @@ public class Home extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+
+  /*  public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -139,7 +139,7 @@ public class Home extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -147,14 +147,18 @@ public class Home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_personal) {
-            // Handle the camera action
+        if (id == R.id.nav_Contacto) {
+            startActivity(new Intent(Home.this, Contacto.class));
 
-        } else if (id == R.id.nav_contacto) {
 
-        } else if (id == R.id.nav_solicitud) {
+        } else if (id == R.id.nav_About) {
+            startActivity(new Intent(Home.this, About.class));
+
 
         } else if (id == R.id.nav_log_out) {
+            startActivity(new Intent(Home.this, MainActivity.class));
+            Toast.makeText(this, "Vuelva Pronto", Toast.LENGTH_SHORT).show();
+            finish();
 
 
         }

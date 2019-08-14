@@ -44,8 +44,8 @@ public class LoginActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
        // actionBar.setTitle("Login");
 
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowHomeEnabled(true);
+       // actionBar.setDisplayHomeAsUpEnabled(true);
+       // actionBar.setDisplayShowHomeEnabled(true);
 
         mAuth = FirebaseAuth.getInstance();
 

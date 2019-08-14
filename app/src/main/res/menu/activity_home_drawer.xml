@@ -5,22 +5,17 @@
 
     <group android:checkableBehavior="single">
         <item
-        android:id="@+id/nav_personal"
+        android:id="@+id/nav_Contacto"
         android:icon="@drawable/ic_accessibility_black_24dp"
         android:iconTint="@android:color/white"
-        android:title="Personal" />
+        android:title="Contacto" />
 
         <item
-            android:id="@+id/nav_contacto"
+            android:id="@+id/nav_About"
             android:icon="@drawable/ic_person_black_24dp"
             android:iconTint="@android:color/white"
             android:title="About" />
 
-        <item
-            android:id="@+id/nav_solicitud"
-            android:icon="@drawable/ic_build_black_24dp"
-            android:iconTint="@android:color/white"
-            android:title="Solicitudes" />
 
         <item
             android:id="@+id/nav_log_out"

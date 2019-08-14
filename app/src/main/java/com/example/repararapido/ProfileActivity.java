@@ -45,7 +45,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
         else{
 
-            startActivity(new Intent(ProfileActivity.this, Home.class));
+            startActivity(new Intent(ProfileActivity.this, MainActivity.class));
             finish();
         }
     }

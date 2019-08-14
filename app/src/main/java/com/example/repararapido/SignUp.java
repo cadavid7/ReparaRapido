@@ -20,7 +20,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 public class SignUp extends AppCompatActivity {
 
     MaterialEditText edtPhone,edtName,edtPassword;
-    Button btnSignUp;
+    Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +31,12 @@ public class SignUp extends AppCompatActivity {
         edtPassword = (MaterialEditText) findViewById(R.id.edtPassword);
         edtName = (MaterialEditText) findViewById(R.id.edtName);
 
-        btnSignUp = findViewById(R.id.btnSignUp);
+        btnRegister = findViewById(R.id.btnRegister);
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final ProgressDialog mDialog = new ProgressDialog(SignUp.this);
@@ -48,7 +48,7 @@ public class SignUp extends AppCompatActivity {
                         if(dataSnapshot.child(edtPhone.getText().toString()).exists())
                         {
                             mDialog.dismiss();
-                            Toast.makeText(SignUp.this, "El Numero ya Existe!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUp.this, "Agregado", Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
