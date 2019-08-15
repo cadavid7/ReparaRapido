@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+android:background="@drawable/whitebackground"
     android:gravity="center"
     android:padding="20dp"
     tools:context=".emailActivity">
@@ -55,7 +55,7 @@
         android:layout_weight="1"
         android:id="@+id/et_message"
         android:textColor="@color/colorPrimary"
-        android:hint="Message"
+        android:hint="Ingrese la dirección del sitio..."
         android:padding="10dp"
         android:gravity="top"
         android:layout_marginTop="10dp"

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/whitebackground"
+    tools:context=".llamar">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ujcv" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:drawableTint="#000E0D0D"
+        android:gravity="center"
+        android:text="Llamenos"
+        android:textColor="#040929"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edtLlamenos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:text="+50431924415"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/imageCall"
+        android:layout_width="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_height="80dp"
+        android:gravity="center"
+
+        android:textColor="#090606"
+        android:src="@drawable/ic_phone"
+        android:textSize="16sp" />
+
+
+</LinearLayout>
